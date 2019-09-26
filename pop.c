@@ -1,7 +1,7 @@
 #include "monty.h"
 
 /**
- * _push - adds a new node at the beginning
+ * _pop - adds a new node at the beginning
  * @stack: stack head
  * @line_number: line nomber
  */
