@@ -43,7 +43,7 @@ instruction_t *launcher(char **arguments, int line_counter)
 		fprintf(stderr, "L%d: unknown instruction %s\n",
 		line_counter, arguments[0]), exit(EXIT_FAILURE);
 	if (strcmp(check->opcode, "push") == 0 && !arguments[1])
-		fprintf(stderr, "L%i: usage: push integer", line_counter),
+		fprintf(stderr, "L%i: usage: push integer\n", line_counter),
 		exit(EXIT_FAILURE);
 	return (check);
 }

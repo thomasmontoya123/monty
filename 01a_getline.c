@@ -21,7 +21,7 @@ ssize_t _getline(char **line, size_t *n, ssize_t fd)
 	*line = _calloc(10, sizeof(char) * 1024);
 	if (!*line)
 	{
-		fprintf(stderr, "Error: malloc failed");
+		fprintf(stderr, "Error: malloc failed\n");
 		return (-3);
 	}
 

@@ -14,7 +14,7 @@ void _push(stack_t **stack, unsigned int line_number)
 
 	new_node = _calloc(10, sizeof(stack_t));
 	if (!new_node)
-		fprintf(stderr, "Error: malloc failed"), exit(EXIT_FAILURE);
+		fprintf(stderr, "Error: malloc failed\n"), exit(EXIT_FAILURE);
 
 	if (push_argument[0] == '-' || push_argument[0] == '+')
 		i = 1;
@@ -22,7 +22,7 @@ void _push(stack_t **stack, unsigned int line_number)
 	for (; push_argument[i] != '\0'; i++)
 	{
 		if (isdigit(push_argument[i]) == 0)
-			fprintf(stderr, "L%i: usage: push integer",
+			fprintf(stderr, "L%i: usage: push integer\n",
 			line_number), exit(EXIT_FAILURE);
 	}
 

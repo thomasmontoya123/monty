@@ -15,10 +15,10 @@ int main(int argc, char **argv)
 	instruction_t *main_checker = NULL;
 
 	if (argc != 2)
-		fprintf(stderr, "USAGE: monty file"), exit(EXIT_FAILURE);
+		fprintf(stderr, "USAGE: monty file\n"), exit(EXIT_FAILURE);
 	fd = open(argv[1], 00);
 	if (fd == -1)
-		fprintf(stderr, "Error: Can't open file %s", argv[1]), exit(EXIT_FAILURE);
+		fprintf(stderr, "Error: Can't open file %s\n", argv[1]), exit(EXIT_FAILURE);
 	do {
 		readed_chars = _getline(&input_line, &size, fd);
 		if (readed_chars == -3)

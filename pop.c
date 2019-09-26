@@ -11,7 +11,7 @@ void _pop(stack_t **stack, unsigned int line_number)
 	stack_t *temporal;
 
 	if (!(*stack))
-		fprintf(stderr, "L%d: can't pop an empty stack", line_number),
+		fprintf(stderr, "L%d: can't pop an empty stack\n", line_number),
 		exit(EXIT_FAILURE);
 
 	temporal = *stack;
