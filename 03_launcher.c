@@ -12,13 +12,6 @@ instruction_t *launcher(char **arguments, int line_counter)
 {
 	unsigned int index = 0;
 	instruction_t *check = NULL;
-
-	if (arguments[1])
-		push_argument = arguments[1];
-	check = _calloc(10, sizeof(instruction_t));
-	/*instruction_t *operation = NULL;*/
-	check->opcode = NULL;
-	check->f = NULL;
 	instruction_t ops[] = {
 	{"push", _push},
 	{"pall", _pall},
@@ -29,6 +22,13 @@ instruction_t *launcher(char **arguments, int line_counter)
 	{"nop", _nop},
 	{NULL, NULL}
 	};
+
+	if (arguments[1])
+		push_argument = arguments[1];
+	check = _calloc(10, sizeof(instruction_t));
+	/*instruction_t *operation = NULL;*/
+	check->opcode = NULL;
+	check->f = NULL;
 	if (!arguments[0] || strcmp(arguments[0], "#") == 0)
 	{
 		check->opcode = ops[6].opcode;
