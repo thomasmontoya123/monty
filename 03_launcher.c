@@ -33,7 +33,7 @@ instruction_t *launcher(char **arguments, int line_counter)
 	/*instruction_t *operation = NULL;*/
 	check->opcode = NULL;
 	check->f = NULL;
-	if (!arguments[0] || strcmp(arguments[0], "#") == 0)
+	if (!arguments[0] || arguments[0][0] == '#')
 	{
 		check->opcode = ops[6].opcode;
 		check->f = ops[6].f;
