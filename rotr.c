@@ -10,11 +10,9 @@
 void _rotr(stack_t **stack, unsigned int line_number)
 {
 	stack_t *temporal;
-	int holder;
+	int holder = 0;
 
 	(void)line_number;
-
-	holder = 0;
 
 	if (!stack)
 		return;
