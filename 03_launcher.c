@@ -42,6 +42,7 @@ instruction_t *launcher(char **arguments, int line_counter)
 	{"div", _div},
 	{"mod", _mod},
 	{"pchar", _pchar},
+	{"rotl", _rotl},
 	{NULL, NULL}
 	};
 
