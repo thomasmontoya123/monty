@@ -13,7 +13,7 @@ void _add(stack_t **stack, unsigned int line_number)
 	int result = 0;
 
 
-	if (!(*stack)->next || !*stack)
+	if (!(*stack)->next || !(*stack))
 		fprintf(stderr, "L%d: can't add, stack too short\n", line_number),
 		exit(EXIT_FAILURE);
 	temporal = *stack;
