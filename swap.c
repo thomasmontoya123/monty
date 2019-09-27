@@ -12,11 +12,7 @@ void _swap(stack_t **stack, unsigned int line_number)
 	stack_t *temporal;
 	int hold = 0;
 
-	if (!(*stack))
-		fprintf(stderr, "L%d: can't swap an empty stack\n", line_number),
-		exit(EXIT_FAILURE);
-
-	if (!(*stack)->next)
+	if (!(*stack) || !(*stack)->next)
 		fprintf(stderr, "L%d: can't swap, stack too short\n", line_number),
 		exit(EXIT_FAILURE);
 
