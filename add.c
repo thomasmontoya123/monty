@@ -12,11 +12,8 @@ void _add(stack_t **stack, unsigned int line_number)
 	stack_t *temporal;
 	int result = 0;
 
-	if (!(*stack))
-		fprintf(stderr, "L%d: can't add an empty stack\n", line_number),
-		exit(EXIT_FAILURE);
 
-	if (!(*stack)->next)
+	if (!(*stack)->next || !*stack)
 	{
 		fprintf(stderr, "L%d: can't add, stack too short\n", line_number),
 		exit(EXIT_FAILURE);
