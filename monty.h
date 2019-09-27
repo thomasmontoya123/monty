@@ -44,6 +44,7 @@ typedef struct instruction_s
 
 /*main functions*/
 instruction_t *launcher(char **arguments, int line_counter);
+void launcher_error(char **arguments, int line_counter, instruction_t *check);
 char **line_spliter(char *inputLine);
 char *_strtok_mod(char *str, const char *delim, char **save_ptr);
 char *_strtok(char *str, const char *delimiters);
@@ -76,7 +77,7 @@ void _mod(stack_t **stack, unsigned int line_number);
 void _pchar(stack_t **stack, unsigned int line_number);
 void _pstr(stack_t **stack, unsigned int line_number);
 
-
+void _rotl(stack_t **stack, unsigned int line_number);
 
 
 char *push_argument;
