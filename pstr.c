@@ -13,13 +13,13 @@ void _pstr(stack_t **stack, unsigned int line_number)
 	int ascii_value = 0;
 
 	(void)line_number;
-	temporal = *stack;
 
 	if (!(*stack))
 		printf("\n");
 	else
 	{
-		while (temporal->next)
+		temporal = *stack;
+		while (temporal)
 		{
 			ascii_value = temporal->n;
 			if (isascii(ascii_value) && ascii_value != 0)
