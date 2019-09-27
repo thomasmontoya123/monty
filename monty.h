@@ -44,6 +44,7 @@ typedef struct instruction_s
 
 /*main functions*/
 instruction_t *launcher(char **arguments, int line_counter);
+void launcher_error(char **arguments, int line_counter, instruction_t *check);
 char **line_spliter(char *inputLine);
 char *_strtok_mod(char *str, const char *delim, char **save_ptr);
 char *_strtok(char *str, const char *delimiters);

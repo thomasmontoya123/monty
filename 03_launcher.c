@@ -1,5 +1,22 @@
 #include "monty.h"
 
+/**
+ * launcher_error - check opcode and return struct with function pointer.
+ * @arguments: splited line
+ * @line_counter: number of lines
+ * @check: Operation selector
+ */
+void launcher_error(char **arguments, int line_counter, instruction_t *check)
+{
+	if (check->opcode == NULL)
+		fprintf(stderr, "L%d: unknown instruction %s\n",
+		line_counter, arguments[0]), exit(EXIT_FAILURE);
+	if (strcmp(check->opcode, "push") == 0 && !arguments[1])
+		fprintf(stderr, "L%i: usage: push integer\n", line_counter),
+		exit(EXIT_FAILURE);
+
+}
+
 
 /**
  * launcher - check opcode and return struct with function pointer.
@@ -43,11 +60,6 @@ instruction_t *launcher(char **arguments, int line_counter)
 		index++;
 	check->opcode = ops[index].opcode;
 	check->f = ops[index].f;
-	if (check->opcode == NULL)
-		fprintf(stderr, "L%d: unknown instruction %s\n",
-		line_counter, arguments[0]), exit(EXIT_FAILURE);
-	if (strcmp(check->opcode, "push") == 0 && !arguments[1])
-		fprintf(stderr, "L%i: usage: push integer\n", line_counter),
-		exit(EXIT_FAILURE);
+	launcher_error(arguments, line_counter, check);
 	return (check);
 }
