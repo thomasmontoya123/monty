@@ -7,7 +7,8 @@
 */
 int main(int argc, char **argv)
 {
-	int fd = 0, line_counter = 1;
+	int line_counter = 1;
+	FILE *fd;
 	char *input_line = NULL,  **arguments = NULL;
 	ssize_t readed_chars = 0;
 	size_t size = 1024;
@@ -16,13 +17,13 @@ int main(int argc, char **argv)
 
 	if (argc != 2)
 		fprintf(stderr, "USAGE: monty file\n"), exit(EXIT_FAILURE);
-	fd = open(argv[1], 00);
-	if (fd == -1)
+	if (access(argv[1], R_OK) != 0)
+		fprintf(stderr, "Error: Can't open file %s\n", argv[1]), exit(EXIT_FAILURE);
+	fd = fopen(argv[1], "r");
+	if (fd == NULL)
 		fprintf(stderr, "Error: Can't open file %s\n", argv[1]), exit(EXIT_FAILURE);
 	do {
-		readed_chars = _getline(&input_line, &size, fd);
-		if (readed_chars == -3)
-			exit(EXIT_FAILURE);
+		readed_chars = getline(&input_line, &size, fd);
 		if (readed_chars == -1)
 		{
 			free(input_line);
@@ -43,5 +44,6 @@ int main(int argc, char **argv)
 		line_counter++;
 	} while (1);
 	free_stack(stack);
-	close(fd), exit(EXIT_SUCCESS);
+	fclose(fd);
+	exit(EXIT_SUCCESS);
 }
