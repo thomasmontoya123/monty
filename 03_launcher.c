@@ -24,13 +24,13 @@ instruction_t *launcher(char **arguments, int line_counter)
 	{"mul", _mul},
 	{"div", _div},
 	{"mod", _mod},
+	{"pchar", _pchar},
 	{NULL, NULL}
 	};
 
 	if (arguments[1])
 		push_argument = arguments[1];
 	check = _calloc(10, sizeof(instruction_t));
-	/*instruction_t *operation = NULL;*/
 	check->opcode = NULL;
 	check->f = NULL;
 	if (!arguments[0] || arguments[0][0] == '#')
