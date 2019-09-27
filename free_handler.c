@@ -11,7 +11,8 @@
 void free_handler(char *input_line, char **arguments,
 instruction_t *main_checker)
 {
+	(void) input_line;
 	free(main_checker);
 	free(arguments);
-	free(input_line);
+	/*free(input_line);*/
 }
