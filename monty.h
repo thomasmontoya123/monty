@@ -59,6 +59,7 @@ int _getc(ssize_t fd);
 
 void *_calloc(unsigned int nmemb, unsigned int size);
 char *_memset(char *s, char b, unsigned int n);
+void add_node_end(stack_t **stack, const int n);
 
 /*functions*/
 
