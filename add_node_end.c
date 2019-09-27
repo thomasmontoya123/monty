@@ -1,8 +1,8 @@
 #include "monty.h"
 
 /**
- * add_dnodeint_end - adds a new node at the end
- * @head: head
+ * add_node_end - adds a new node at the end
+ * @stack: head
  * @n: integer data
  * Return: void
  */

@@ -44,6 +44,7 @@ instruction_t *launcher(char **arguments, int line_counter)
 	{"pchar", _pchar},
 	{"pstr", _pstr},
 	{"rotl", _rotl},
+	{"rotr", _rotr},
 	{NULL, NULL}
 	};
 

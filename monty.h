@@ -60,6 +60,7 @@ int _getc(ssize_t fd);
 void *_calloc(unsigned int nmemb, unsigned int size);
 char *_memset(char *s, char b, unsigned int n);
 void add_node_end(stack_t **stack, const int n);
+void add_node_front(stack_t **head, const int n);
 
 /*functions*/
 
@@ -79,6 +80,7 @@ void _pchar(stack_t **stack, unsigned int line_number);
 void _pstr(stack_t **stack, unsigned int line_number);
 
 void _rotl(stack_t **stack, unsigned int line_number);
+void _rotr(stack_t **stack, unsigned int line_number);
 
 
 char *push_argument;
